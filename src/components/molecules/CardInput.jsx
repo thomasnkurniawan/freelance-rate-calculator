@@ -5,6 +5,7 @@ import {
   RiEdit2Line,
   RiFileShieldLine,
   RiHourglassFill,
+  RiInputField,
   RiStairsLine,
   RiTimeFill,
   RiTimeLine,
@@ -70,7 +71,10 @@ export default function CardInput({ setFormValue }) {
     <Card className="w-full">
       <form onSubmit={onSubmit}>
         <div className="flex flex-col gap-4">
-          <h2 className="text-lg font-semibold text-neutral-900">Inputs</h2>
+          <h2 className="text-lg font-semibold text-neutral-900">
+            <RiInputField className="inline-block mr-2" />
+            Inputs
+          </h2>
           <div className="flex flex-col gap-2">
             <label className="block text-sm font-medium text-neutral-700">
               Experience Level

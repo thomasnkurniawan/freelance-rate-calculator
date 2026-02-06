@@ -5,6 +5,9 @@ import CardSummary from "../components/molecules/CardSummary";
 import { useMemo, useState } from "react";
 import Card from "../components/atoms/Card";
 import { formatRupiah } from "../utils/currency";
+import Divider from "../components/atoms/Divider";
+import ArticleFreelanceRateGuide from "../components/molecules/Articles";
+import { RiDoubleQuotesL } from "@remixicon/react";
 
 export default function Home() {
   const [formValue, setFormValue] = useState(null);
@@ -91,19 +94,34 @@ export default function Home() {
         </div>
         <div className="w-full max-w-4xl">
           <Card>
-            <h2 className="text-lg font-bold text-neutral-900">Reference:</h2>
+            <h2 className="text-lg font-bold text-neutral-900 flex items-center mb-2">
+              <RiDoubleQuotesL className="inline-block mr-2" />
+              Reference:
+            </h2>
             <ul>
               <li>
-                <b>Experience Level:</b> {experienceLevelItems.map((item) => `${item.label} (${formatRupiah(item.rate)})`).join(", ")}
+                <b>Experience Level:</b>{" "}
+                {experienceLevelItems
+                  .map((item) => `${item.label} (${formatRupiah(item.rate)})`)
+                  .join(", ")}
               </li>
               <li>
-                <b>Difficulty:</b> {difficulty.map((item) => `${item.label} (${item.multiplier})`).join(", ")}
+                <b>Difficulty:</b>{" "}
+                {difficulty
+                  .map((item) => `${item.label} (${item.multiplier})`)
+                  .join(", ")}
               </li>
               <li>
-                <b>Deadline:</b> {deadline.map((item) => `${item.label} (${item.multiplier})`).join(", ")}
+                <b>Deadline:</b>{" "}
+                {deadline
+                  .map((item) => `${item.label} (${item.multiplier})`)
+                  .join(", ")}
               </li>
               <li>
-                <b>Revision Level:</b> {revisionLevel.map((item) => `${item.label} (${item.multiplier})`).join(", ")}
+                <b>Revision Level:</b>{" "}
+                {revisionLevel
+                  .map((item) => `${item.label} (${item.multiplier})`)
+                  .join(", ")}
               </li>
             </ul>
           </Card>
@@ -116,6 +134,12 @@ export default function Home() {
             <CardSummary calculationResult={calculationResult} />
           </div>
         </div>
+
+        <section className="relative py-8 my-16">
+          <Divider position="top" />
+
+          <ArticleFreelanceRateGuide />
+        </section>
       </Container>
     </MainLayout>
   );

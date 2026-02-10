@@ -134,13 +134,12 @@ export default function Home() {
             <CardSummary calculationResult={calculationResult} />
           </div>
         </div>
-
-        <section className="relative py-8 my-16">
-          <Divider position="top" />
-
-          <ArticleFreelanceRateGuide />
-        </section>
       </Container>
+      <section className="relative py-8 px-4 my-16">
+        <Divider position="top" />
+
+        <ArticleFreelanceRateGuide />
+      </section>
     </MainLayout>
   );
 }
